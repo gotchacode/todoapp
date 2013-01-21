@@ -1,4 +1,6 @@
-#TodoApp
+=======
+TodoApp
+=======
 
 A simple todo app built with twitter bootstrap, angularjs, underscorejs and runs
 on node.js.
