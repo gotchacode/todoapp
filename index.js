@@ -2,14 +2,7 @@ var http = require('http'),
     express = require('express');
 
 var app = express(),
-    server = http.createServer(app),
-    port = +(process.argv[2]);
-
-
-if (!port) {
-  console.error("Please specify the port no to start in");
-  process.exit();
-}
+    server = http.createServer(app);
 
 app.use(express.logger('dev'));
 app.use(express.compress());
@@ -21,6 +14,5 @@ app.use(express.favicon());
 
 // Routes
 
-server.listen(port, function startServer() {
-  console.log('Server listening on port %d in %s mode', server.address().port, app.settings.env);
-});
+server.listen(3000);
+console.log('Server listening on port 3000');

@@ -7,8 +7,8 @@ on node.js.
 
 Inorder to run, clone the repo
 
-    git clone git@github.com:vinitcool76/TodoApp.git
- 
+    git clone git@github.com:vinitcool76/todoapp.git
+
 Then run:
 
     node index.js 8888
