@@ -9,6 +9,7 @@
       , "npm":  "1.2.x"
     }
   , "dependencies": {
-      "express": "latest"
+        "express": "latest"
+      , "forever": "latest"
     }
 }
