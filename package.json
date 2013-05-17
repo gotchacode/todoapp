@@ -1,11 +1,14 @@
 {
-  "name": "easytodo app",
-  "version": "0.0.1",
-  "engines": {
-    "node": "0.10.x",
-    "npm":  "1.2.x"
-  },
-  "dependecies": {
-    "express": "3.2.4"
-  }
+    "name": "easytodoapp"
+  , "description": "TodoAPP based on AngularJS"
+  , "version": "0.1.1"
+  , "private": false
+  , "author": "vinit kumar <vinitcool76@gmail.com> (http://vinitkumar.me)"
+  , "engines": {
+        "node": "0.10.x"
+      , "npm":  "1.2.x"
+    }
+  , "dependencies": {
+      "express": "latest"
+    }
 }

@@ -11,7 +11,7 @@ Inorder to run, clone the repo
 
 Then run:
 
-    node index.js 8888
+    node index.js
 
 Then check the http://localhost:8888 so see it in action.
 
