@@ -7,79 +7,56 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/todo.css">
 <style type="text/css">
-      body {
-        padding-top: 20px;
+       body {
+        padding-top: 60px;
         padding-bottom: 40px;
-      }
-
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
       }
     </style>
 </head>
 <body>
-<div class="container-narrow">
-
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="http://twitter.com/vinitcool76">Contact</a></li>
-        </ul>
-        <h3 class="muted">Todo App</h3>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">TODO APP</a>
+          <!--/.nav-collapse -->
+        </div>
       </div>
+    </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div ng-controller="TodoCtrl">
+        <div class="span4">
+          <div class="well sidebar-nav">
+          <form class="form-horizontal">
+            <input type="text" class="input-xlarge"ng-model="formTodoText" ng-model-instant>
+            <button class="btn btn-primary" ng-click="addTodo()"> <i class="icon-plus"></i>
+              Add
+            </button>
+          </form>
+        </div>
+        </div>
 
-      <hr>
+        <div class="span8">
+          <ul>
+            <li ng-repeat="todo in todos"> <i class="icon-tasks"></i>
+              <input type="checkbox" ng-model="todo.done">
+              <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+          </ul>
 
-      <div class="jumbotron">
-        <h1>Super Easy Todo App</h1>
-        <p class="lead">App to help you manage your todo list</p>
-        <a class="btn btn-large btn-success" href="mailto:vinitcool76@gmail.com">Mail me</a>
+          <p>Tasks Still left: {{gettotalTodos()}}</p>
+          <button class="btn btn-success" ng-click="clearCompleted()">
+            <i class="icon-trash"></i>
+            Clear Completed
+          </button>
+        </div>
       </div>
-
-      <hr>
-    <div class="container">
-    <div ng-controller="TodoCtrl">
-    <h2>Total todos:     {{gettotalTodos()}}</h2>
-    <hr>
-    <ul class=unstyled>
-        <li ng-repeat="todo in todos">
-        <input type="checkbox" ng-model="todo.done">
-        <span class="done-{{todo.done}}">
-            {{todo.text}}</span>
-    </li></ul>
-    <form class="form-horizontal">
-        <input type="text" ng-model="formTodoText" ng-model-instant>
-        <button class="btn" ng-click="addTodo()"><i class="icon-plus"></i>Add</button>
-    </form>
-    <button class="btn-large" ng-click="clearCompleted()"><i class="icon-trash"></i>Clear Completed</button>
-</div>
-</div>
+    </div>
+  </div>
 </body>
 </html>
