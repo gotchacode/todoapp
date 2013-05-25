@@ -13,7 +13,7 @@ function TodoCtrl($scope) {
             return !todo.done;
         })
     };
-     
+
     $scope.addTodo = function() {
         $scope.todos.push({text:$scope.formTodoText, done:false});
         $scope.formTodoText = "";
